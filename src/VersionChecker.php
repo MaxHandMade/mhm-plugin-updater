@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace MHM\PluginUpdater;
 
-final class VersionChecker
+final class VersionChecker implements VersionCheckerInterface
 {
     private const API_BASE = 'https://api.github.com/repos/';
     private const CACHE_TTL = 43200; // 12 hours
