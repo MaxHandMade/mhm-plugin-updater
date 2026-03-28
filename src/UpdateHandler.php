@@ -47,9 +47,25 @@ final class UpdateHandler
             'package'     => $release['zipball_url'],
         ];
 
+        if ($this->tokenManager->hasToken()) {
+            add_filter('http_request_args', [$this, 'injectAuthHeader'], 10, 2);
+        }
+
         $transient->response[$this->file] = $update;
 
         return $transient;
+    }
+
+    public function injectAuthHeader(array $args, string $url): array
+    {
+        if (str_contains($url, 'github.com') && str_contains($url, $this->repo)) {
+            $args['headers'] = array_merge(
+                $args['headers'] ?? [],
+                $this->tokenManager->getAuthHeaders()
+            );
+        }
+
+        return $args;
     }
 
     /**
