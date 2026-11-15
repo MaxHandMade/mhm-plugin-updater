@@ -1,6 +1,6 @@
 <!-- mhm:pencere-karti v1 — CLAUDE.md'nin AYNASI; agents-kart-senkron.py üretir. Elle düzenleme CLAUDE.md'ye yapılır, buraya DEĞİL -->
 # mhm-plugin-updater — pencere kartı
-- Tip: belirsiz (elle düzelt) → orkestratör: yok
+- Tip: WP kütüphanesi (composer; eklentilere gömülür, WP kancaları) → orkestratör: wp-conductor
 - Depo sınıfı: B · hafıza: .claude/memory
 - Aile: — · altyapı olanlar: rentiva-lisans, mhm-ui-core, wpalemi
 - Kapılar: —
